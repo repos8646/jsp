@@ -34,7 +34,7 @@
 		vo.setSeq(rs.getInt(1));
 		vo.setName(rs.getString(2));
 		vo.setGender(rs.getString(3));
-		vo.setAge(rs.getString(4));
+		vo.setAge(rs.getInt(4));
 		vo.setAddr(rs.getString(5));
 		
 		users.add(vo);
@@ -99,8 +99,8 @@
 			<td><%= vo.getAge() %></td>
 			<td><%= vo.getAddr() %></td>
 			<td>
-				<a href="/ch06/user5/modify.jsp?uid=<%= vo.getSeq() %>">수정</a>
-				<a href="/ch06/user5/delete.jsp?uid=<%= vo.getSeq() %>" class="del">삭제</a>
+				<a href="/ch06/user5/modify.jsp?seq=<%= vo.getSeq() %>">수정</a>
+				<a href="/ch06/user5/delete.jsp?seq=<%= vo.getSeq() %>" class="del">삭제</a>
 			</td>
 		</tr>
 		<% } %>

@@ -5,7 +5,7 @@ public class User5VO {
 	private int seq;
 	private String name;
 	private String gender;
-	private String age;
+	private int age;
 	private String addr;
 	
 	public int getSeq() {
@@ -26,10 +26,10 @@ public class User5VO {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public String getAge() {
+	public int getAge() {
 		return age;
 	}
-	public void setAge(String age) {
+	public void setAge(int age) {
 		this.age = age;
 	}
 	public String getAddr() {
