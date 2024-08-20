@@ -20,6 +20,6 @@
   <!-- 롤링 어펜더 - 파일의 크기, 날짜에 따라 로그파일 생성을 위한 어펜더 -->
 
   <root level="debug">
-    <appender-ref ref="FILE" />
+    <appender-ref ref="STDOUT" />
   </root>
 </configuration>
