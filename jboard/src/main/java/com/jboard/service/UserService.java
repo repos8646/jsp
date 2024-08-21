@@ -1,4 +1,4 @@
-package com.jboard.service.user;
+package com.jboard.service;
 
 import java.util.List;
 import java.util.Properties;
@@ -12,8 +12,8 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-import com.jboard.dao.user.UserDao;
-import com.jboard.dto.user.UserDto;
+import com.jboard.dao.UserDao;
+import com.jboard.dto.UserDto;
 
 public enum UserService {
 
@@ -75,8 +75,8 @@ public enum UserService {
 	public void insertUser(UserDto dto) {
 		dao.insertUser(dto);
 	}
-	public UserDto selectUser(String uid) {
-		return dao.selectUser(uid);
+	public UserDto selectUser(String uid, String pass) {
+		return dao.selectUser(uid, pass);
 	}
 	public List<UserDto> selectUsers() {
 		return dao.selectUsers();
