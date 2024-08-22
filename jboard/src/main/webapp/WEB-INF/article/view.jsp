@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,19 +17,25 @@
                 <table>
                     <tr>
                         <td>제목</td>
-                        <td><input type="text" name="title" value="제목입니다." readonly/></td>
+                        <td><input type="text" name="title" value="${articleDto.title}" readonly/></td>
                     </tr>
+                    <c:if test="${articleDto.file > 0}">
                     <tr>
                         <td>첨부파일</td>
                         <td>
-                            <a href="#">2020년 상반기 매출자료.xls</a>
-                            <span>7회 다운로드</span>
+                        <c:forEach var="file" items="${articleDto.files}">
+	                        <p style="margin-bottom:6px">
+	                            <a href="/jboard/article/fileDownload.do?fno=${file.fno}">${file.oName}</a>
+	                            <span>${file.download}회 다운로드</span>
+	                        </p>
+                        </c:forEach>
                         </td>
                     </tr>
+                    </c:if>
                     <tr>
                         <td>내용</td>
                         <td>
-                            <textarea name="content" readonly>내용 샘플입니다.</textarea>
+                            <textarea name="content" readonly>${articleDto.content}</textarea>
                         </td>
                     </tr>
                 </table>

@@ -26,6 +26,15 @@ public class SQL {
 											+ "`regDate`=NOW()";
 	
 	// article
+	public static final String SELECT_COUNT_TOTAL = "SELECT COUNT(*) FROM `article`";
+	public static final String SELECT_ARTICLE = "SELECT * FROM `article` AS a "
+												+ "left JOIN `file` AS b ON a.`no`=b.ano "
+												+ "WHERE `no`=?";
+	public static final String SELECT_ARTICLEES = "SELECT a.*, b.nick FROM `article` AS a "
+												+ "JOIN `user` AS b "
+												+ "ON a.writer = b.uid "
+												+ "ORDER BY `no` DESC "
+												+ "LIMIT ?, 10";
 	public static final String SELECT_MAX_NO = "SELECT MAX(`no`) FROM `article`";
 	public static final String INSERT_ARTICLE = "insert into article set "
 											//+ "`no`=?,"
@@ -40,11 +49,14 @@ public class SQL {
 											+ "`rdate`=NOW()";
 	
 	// file
+	public static final String SELECT_FILE = "select * from file where fno=?";
 	public static final String INSERT_FILE = "insert into file set "
 												+ "`ano`=?,"
 												+ "`oName`=?,"
 												+ "`sName`=?,"
 												+ "`rdate`=NOW()";
+	
+	public static final String UPDATE_FILE_DOWNLOAD_COUNT = "update file set `download` = `download` + 1 where `fno`=?";
 	
 	
 }
