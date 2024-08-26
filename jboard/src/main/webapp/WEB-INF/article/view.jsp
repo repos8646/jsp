@@ -61,7 +61,7 @@
     				
     				const article = e.target.closest('article');
     				const textarea = article.querySelector('textarea');
-    				content = textarea.value; // ?
+    				content = textarea.value;
     				console.log('textarea');
     				
     				const mode = e.target.innerText;
